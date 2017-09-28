@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using IzumiSagiri.App_Start;
+using System.Web;
 using System.Web.Mvc;
 
 namespace IzumiSagiri
@@ -8,6 +9,7 @@ namespace IzumiSagiri
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new IzumiAuthorization());     
         }
     }
 }
