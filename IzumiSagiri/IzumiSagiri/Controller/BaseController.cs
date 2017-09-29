@@ -13,10 +13,5 @@ namespace IzumiSagiri
         {
 
         }
-
-        protected override void OnAuthorization(AuthorizationContext filterContext)
-        {
-
-        }
     }
 }

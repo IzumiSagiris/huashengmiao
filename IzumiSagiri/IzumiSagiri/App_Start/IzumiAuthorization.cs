@@ -12,15 +12,12 @@ namespace IzumiSagiri.App_Start
         {
             if (httpContext == null)
             {
-                throw new ArgumentNullException("HttpContext");
+                return false;
             }
             if (!httpContext.User.Identity.IsAuthenticated)
             {
-                var paras = httpContext.Request.Params;
-
                 return false;
             }
-
             return true;
         }
 
@@ -28,16 +25,22 @@ namespace IzumiSagiri.App_Start
         {
             string controllerName = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName;
             string actionName = filterContext.ActionDescriptor.ActionName;
-            string ReturnPara = string.Empty;
 
-            var paras = filterContext.HttpContext.Request.Params;
-            var paraNames = filterContext.ActionDescriptor.GetParameters();
-            foreach(var paraName in paraNames)
+            IzumiPrincipal principal = new IzumiPrincipal(HttpContext.Current.User.Identity.Name);
+            filterContext.HttpContext.User = principal;
+
+            if (!AuthorizeCore(filterContext.HttpContext))
             {
+                string ReturnPara = string.Empty;
+                var paras = filterContext.HttpContext.Request.Params;
+                var paraNames = filterContext.ActionDescriptor.GetParameters();
+                foreach (var paraName in paraNames)
+                {
+                    ReturnPara += paras[paraName.ParameterName];
+                    ReturnPara += "&";
+                }
 
             }
-
-            base.OnAuthorization(filterContext);
         }
 
     }

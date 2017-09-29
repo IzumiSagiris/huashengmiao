@@ -14,9 +14,15 @@ namespace IzumiSagiri
     public class HomeController : BaseController
     {
         // GET: Home
-        public ActionResult Index(long ID,long License)
+        public ActionResult Index(long ID = 0, long License = 20)
         {
             return View();
         }
+
+        public ActionResult License(long ID = 0, long License = 20)
+        {
+            return View();
+        }
+
     }
 }
