@@ -31,15 +31,20 @@ namespace IzumiSagiri.App_Start
 
             if (!AuthorizeCore(filterContext.HttpContext))
             {
-                string ReturnPara = string.Empty;
+                string returnUrl = "/Sign/SignIn?returnUrl=";
                 var paras = filterContext.HttpContext.Request.Params;
                 var paraNames = filterContext.ActionDescriptor.GetParameters();
-                foreach (var paraName in paraNames)
+                returnUrl += "/" + controllerName + "/" + actionName;
+                var param = filterContext.HttpContext.Request.QueryString;
+                if (param.Count > 0)
                 {
-                    ReturnPara += paras[paraName.ParameterName];
-                    ReturnPara += "&";
+                    returnUrl += "?";
                 }
-
+                foreach (string p in param.Keys)
+                {
+                    returnUrl += p + "=" + param[p] + "&";
+                }
+                filterContext.Result = new RedirectResult(returnUrl);
             }
         }
 

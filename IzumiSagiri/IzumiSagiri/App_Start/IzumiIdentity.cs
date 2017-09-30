@@ -33,7 +33,10 @@ namespace IzumiSagiri.App_Start
 
         public bool IsAuthenticated
         {
-            get { return true; }
+            get
+            {
+                return !(string.IsNullOrEmpty(this._userName));
+            }
         }
 
         public string Name

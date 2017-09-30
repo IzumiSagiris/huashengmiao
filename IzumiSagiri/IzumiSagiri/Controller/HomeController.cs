@@ -11,15 +11,20 @@ namespace IzumiSagiri
     /// Home
     /// </summary>
     [IzumiAuthorization]
-    public class HomeController : BaseController
+    public class HomeController :  BaseController
     {
         // GET: Home
-        public ActionResult Index(long ID = 0, long License = 20)
+        public ActionResult Index(long ID = 10, long License = 20)
         {
             return View();
         }
 
         public ActionResult License(long ID = 0, long License = 20)
+        {
+            return View();
+        }
+
+        public ActionResult test()
         {
             return View();
         }

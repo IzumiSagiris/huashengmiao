@@ -12,14 +12,21 @@ namespace IzumiSagiri
     {
         // GET: SignIn
         [AllowAnonymous]
-        public ActionResult SignIn(string UserName="",string Password="")
+        public ActionResult SignIn(string returnUrl = "")
+        {
+            Response.Headers.Add("returnUrl", returnUrl);
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult SignOn(string UserName = "", string Password = "", string returnUrl = "")
         {
             //test
             UserName = "Izmui";
             Password = "Sagiri";
             FormsAuthentication.SetAuthCookie(UserName, false);
-
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

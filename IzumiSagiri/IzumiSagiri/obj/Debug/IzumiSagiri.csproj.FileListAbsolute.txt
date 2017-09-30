@@ -50,3 +50,4 @@ D:\huashengmiao\IzumiSagiri\IzumiSagiri\bin\System.Web.WebPages.Deployment.xml
 D:\huashengmiao\IzumiSagiri\IzumiSagiri\bin\System.Web.WebPages.Razor.xml
 D:\huashengmiao\IzumiSagiri\IzumiSagiri\obj\Debug\IzumiSagiri.dll
 D:\huashengmiao\IzumiSagiri\IzumiSagiri\obj\Debug\IzumiSagiri.pdb
+D:\huashengmiao\IzumiSagiri\IzumiSagiri\obj\Debug\IzumiSagiri.csprojResolveAssemblyReference.cache

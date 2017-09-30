@@ -18,7 +18,7 @@ namespace IzumiSagiri.App_Start
 
         public bool IsInRole(string role)
         {
-            return false;//返回false
+            return false;
         }
 
         public IzumiPrincipal(string UserName)
