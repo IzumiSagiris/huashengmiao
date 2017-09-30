@@ -19,7 +19,6 @@ namespace IzumiSagiri
         }
 
         [AllowAnonymous]
-        [HttpPost]
         public ActionResult SignOn(string UserName = "", string Password = "", string returnUrl = "")
         {
             //test

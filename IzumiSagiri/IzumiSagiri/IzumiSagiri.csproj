@@ -188,9 +188,9 @@
     <Compile Include="App_Start\IzumiIdentity.cs" />
     <Compile Include="App_Start\IzumiPrincipal.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controller\BaseController.cs" />
-    <Compile Include="Controller\HomeController.cs" />
-    <Compile Include="Controller\SignController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SignController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -198,9 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\SignIn\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
