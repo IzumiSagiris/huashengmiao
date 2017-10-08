@@ -1,0 +1,5 @@
+D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Interface\bin\Debug\IzumiSagiris.Interface.dll
+D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Interface\bin\Debug\IzumiSagiris.Interface.pdb
+D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Interface\obj\Debug\IzumiSagiris.Interface.csprojResolveAssemblyReference.cache
+D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Interface\obj\Debug\IzumiSagiris.Interface.dll
+D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Interface\obj\Debug\IzumiSagiris.Interface.pdb
