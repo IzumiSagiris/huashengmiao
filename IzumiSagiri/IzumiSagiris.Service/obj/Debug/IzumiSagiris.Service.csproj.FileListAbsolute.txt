@@ -5,3 +5,7 @@ D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Service\bin\Debug\IzumiSag
 D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Service\obj\Debug\IzumiSagiris.Service.csprojResolveAssemblyReference.cache
 D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Service\obj\Debug\IzumiSagiris.Service.dll
 D:\IzumiSagiris\huashengmiao\IzumiSagiri\IzumiSagiris.Service\obj\Debug\IzumiSagiris.Service.pdb
+D:\huashengmiao\huashengmiao\IzumiSagiri\IzumiSagiris.Service\bin\Debug\IzumiSagiris.Service.dll
+D:\huashengmiao\huashengmiao\IzumiSagiri\IzumiSagiris.Service\bin\Debug\IzumiSagiris.Service.pdb
+D:\huashengmiao\huashengmiao\IzumiSagiri\IzumiSagiris.Service\obj\Debug\IzumiSagiris.Service.dll
+D:\huashengmiao\huashengmiao\IzumiSagiri\IzumiSagiris.Service\obj\Debug\IzumiSagiris.Service.pdb

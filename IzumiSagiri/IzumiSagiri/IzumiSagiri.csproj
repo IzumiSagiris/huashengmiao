@@ -185,7 +185,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IzumiAuthorization.cs" />
+    <Compile Include="App_Start\IzumiDependencyResolver.cs" />
     <Compile Include="App_Start\IzumiIdentity.cs" />
+    <Compile Include="App_Start\IzumiIocManager.cs" />
     <Compile Include="App_Start\IzumiPrincipal.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -201,9 +203,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IzumiSagiris.Interface\IzumiSagiris.Interface.csproj">
-      <Project>{9935d3c3-bedd-41e2-9574-2381c32850a7}</Project>
-      <Name>IzumiSagiris.Interface</Name>
+    <ProjectReference Include="..\IzumiSagiris.Service\IzumiSagiris.Service.csproj">
+      <Project>{f93e2b1f-940c-4451-ac4a-8f76e1a4384d}</Project>
+      <Name>IzumiSagiris.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IzumiSagirisCommon\IzumiSagirisCommon.csproj">
+      <Project>{8df0e8ae-9bdd-4bb1-b562-470f35a9fe24}</Project>
+      <Name>IzumiSagirisCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

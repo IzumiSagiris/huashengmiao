@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IzumiSagiris.Interface
+namespace IzumiSagiris.Service.IzmuService
 {
-    public interface IHomeService
+    public interface IzumiInterFace
     {
         double Shimada(double one, double two);
     }

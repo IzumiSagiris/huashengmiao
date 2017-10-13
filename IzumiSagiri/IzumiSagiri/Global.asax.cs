@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using IzumiSagirisCommon.Resolver;
+using IzumiSagiri.App_Start;
 
 namespace IzumiSagiri
 {
@@ -16,6 +18,9 @@ namespace IzumiSagiri
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            IzumiIocManager.RegisterIzumiLocator(new IzumiContainer());
+            DependencyResolver.SetResolver(new IzumiDependencyResolver());
+
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IzumiSagiris.Service.IzmuService;
 
 namespace IzumiSagiri
 {
@@ -13,6 +14,11 @@ namespace IzumiSagiri
     [IzumiAuthorization]
     public class HomeController :  BaseController
     {
+        public readonly IzumiInterFace _service;
+        public HomeController()
+        {
+            _service = DependencyResolver.Current.GetService<IzumiInterFace>();
+        }
         // GET: Home
         public ActionResult Index(long ID = 10, long License = 20)
         {
