@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using IzumiSagiris.Service.IzmuService;
+using IzumiSagirisCommon.Resolver;
 
 namespace IzumiSagiri
 {
@@ -17,11 +18,12 @@ namespace IzumiSagiri
         public readonly IzumiInterFace _service;
         public HomeController()
         {
-            _service = DependencyResolver.Current.GetService<IzumiInterFace>();
+            _service = IzumiStaticLocator.GetService<IzumiInterFace>();
         }
         // GET: Home
         public ActionResult Index(long ID = 10, long License = 20)
         {
+            var result = _service.Shimada(5, 6);
             return View();
         }
 

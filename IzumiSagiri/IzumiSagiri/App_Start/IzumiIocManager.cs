@@ -19,7 +19,8 @@ namespace IzumiSagiri.App_Start
             if (IzumiLocator == null)
             {
                 container.RegisterType<IzumiInterFace, IzumiService>();
-                IzumiLocator = new IzumiServiceLocator(container);
+                //IzumiLocator = new IzumiServiceLocator(container);
+                IzumiStaticLocator.SetContainaer(container);
             }
         }
     }
