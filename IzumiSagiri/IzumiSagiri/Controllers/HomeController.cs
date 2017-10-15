@@ -29,11 +29,13 @@ namespace IzumiSagiri
 
         public ActionResult License(long ID = 0, long License = 20)
         {
+            var result = _service.Shimada(5, 6);
             return View();
         }
 
         public ActionResult test()
         {
+            var result = _service.Shimada(5, 6);
             return View();
         }
 
