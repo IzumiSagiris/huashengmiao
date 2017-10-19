@@ -10,18 +10,13 @@ namespace IzumiSagiri.App_Start
     public static class IzumiIocManager
     {
         /// <summary>
-        /// _IzumiLocator
+        /// RegisterIzumiLocator
         /// </summary>
-        public static IzumiServiceLocator IzumiLocator;
-
         public static void RegisterIzumiLocator(IzumiContainer container)
         {
-            if (IzumiLocator == null)
-            {
-                container.RegisterType<IzumiInterFace, IzumiService>();
-                //IzumiLocator = new IzumiServiceLocator(container);
-                IzumiStaticLocator.SetContainaer(container);
-            }
+            container.RegisterType<IzumiInterFace, IzumiService>();
+            IzumiDirectLocator.SetContainaer(container);
+            IzumiServiceLocator.SetContainaer(container);
         }
     }
 }

@@ -16,9 +16,13 @@ namespace IzumiSagiri
     public class HomeController :  BaseController
     {
         public readonly IzumiInterFace _service;
+        public readonly IzumiInterFace _serviceTwo;
+
         public HomeController()
         {
-            _service = IzumiStaticLocator.GetService<IzumiInterFace>();
+            _service = IzumiDirectLocator.GetService<IzumiInterFace>();
+            _serviceTwo = IzumiDirectLocator.GetService<IzumiInterFace>(new object []{ 2.0 });
+
         }
         // GET: Home
         public ActionResult Index(long ID = 10, long License = 20)
@@ -29,7 +33,7 @@ namespace IzumiSagiri
 
         public ActionResult License(long ID = 0, long License = 20)
         {
-            var result = _service.Shimada(5, 6);
+            var result = _serviceTwo.Shimada(5, 6);
             return View();
         }
 

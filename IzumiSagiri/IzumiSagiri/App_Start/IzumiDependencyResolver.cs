@@ -13,10 +13,24 @@ namespace IzumiSagiri.App_Start
         {
             if (serviceType == null)
             {
-                throw new ArgumentNullException("serviceType");
+                throw new ArgumentNullException("serviceType is null");
             }
-            return (serviceType.IsClass && !serviceType.IsAbstract) ? IzumiIocManager.IzumiLocator.Get(serviceType) : null;
+            if(!serviceType.IsClass || serviceType.IsAbstract)
+            {
+                return null;
+            }
+            return IzumiServiceLocator.Get(serviceType);
+
+
         }
+
+        public TInterface GetService<TInterface>()
+        {
+            var type = typeof(TInterface);
+            return IzumiDirectLocator.GetService<TInterface>();
+
+        }
+
         public IEnumerable<object> GetServices(Type serviceType)
         {
             if (serviceType == null)

@@ -19,7 +19,7 @@ namespace IzumiSagiri
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             IzumiIocManager.RegisterIzumiLocator(new IzumiContainer());
-            //DependencyResolver.SetResolver(new IzumiDependencyResolver());
+           // DependencyResolver.SetResolver(new IzumiDependencyResolver());
 
         }
     }

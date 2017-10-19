@@ -11,11 +11,11 @@ namespace IzumiSagirisCommon.Resolver
     public class IzumiServiceLocator
     {
         /// <summary>
-        /// 
+        /// IzumiContainer
         /// </summary>
-        private IzumiContainer _container;
+        private static IzumiContainer _container;
 
-        public IzumiServiceLocator(IzumiContainer container)
+        public static void SetContainaer(IzumiContainer container)
         {
             _container = container;
         }
@@ -25,7 +25,7 @@ namespace IzumiSagirisCommon.Resolver
         /// </summary>
         /// <typeparam name="TInterface">your Interface</typeparam>
         /// <returns></returns>
-        public object Get(Type TInterface)
+        public static object Get(Type TInterface)
         {
             Type type;
             var result = _container.ServiceDic.TryGetValue(TInterface, out type);
@@ -33,12 +33,15 @@ namespace IzumiSagirisCommon.Resolver
             {
                 BindingFlags defaultFlags = BindingFlags.Public | BindingFlags.Instance;
                 var constructors = type.GetConstructors(defaultFlags);//Defualt Constructors
-                var t = this.CreateInstanceEmit(constructors[0]);
+                var t = CreateInstanceEmit(constructors[0]);
                 return t;
             }
             else
             {
-                throw new Exception("none of your service from interface");
+                BindingFlags defaultFlags = BindingFlags.Public | BindingFlags.Instance;
+                var constructors = TInterface.GetConstructors(defaultFlags);//Defualt Constructors
+                var t = CreateInstanceEmit(constructors[0]);
+                return t;
             }
         }
     
@@ -48,7 +51,7 @@ namespace IzumiSagirisCommon.Resolver
         /// <typeparam name="T"></typeparam>
         /// <param name="constructor"></param>
         /// <returns></returns>
-        private object CreateInstanceEmit(ConstructorInfo constructor)
+        private static object CreateInstanceEmit(ConstructorInfo constructor)
         {
             var dynamicMethod = new DynamicMethod(Guid.NewGuid().ToString("N"), typeof(object), new[] { typeof(object[]) }, true);
             ILGenerator il = dynamicMethod.GetILGenerator();
