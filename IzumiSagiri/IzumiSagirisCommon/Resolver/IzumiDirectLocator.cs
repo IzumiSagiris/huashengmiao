@@ -30,9 +30,10 @@ namespace IzumiSagirisCommon.Resolver
         }
 
         /// <summary>
-        /// Service Factory, need a parameter array and check your parameter’
+        /// Service Factory, need a parameter array and check your parameter
+        /// such as double parameter , your should wirte 2.0 instead of 2
         /// </summary>
-        /// <typeparam name="TInterface">your Interface</typeparam>
+        /// <typeparam name="TInterface">your Interface Name</typeparam>
         /// <returns></returns>
         public static TInterface GetService<TInterface>(object[] parameters)
         {

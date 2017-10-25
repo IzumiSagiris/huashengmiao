@@ -21,7 +21,7 @@ namespace IzumiSagiri
         public HomeController()
         {
             _service = IzumiDirectLocator.GetService<IzumiInterFace>();
-            _serviceTwo = IzumiDirectLocator.GetService<IzumiInterFace>(new object []{ 2.0 });
+            _serviceTwo = IzumiDirectLocator.GetService<IzumiInterFace>(new object []{ 2.0 ,3.0 });
 
         }
         // GET: Home

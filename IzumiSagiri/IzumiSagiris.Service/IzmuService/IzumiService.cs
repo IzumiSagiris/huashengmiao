@@ -16,11 +16,23 @@ namespace IzumiSagiris.Service.IzmuService
         {
             three = _three;
         }
-
+        public IzumiService(double _three,double _four)
+        {
+            three = _three;
+            four = _four;
+        }
         private double three;
+
+        private double four;
+
         public double Shimada(double one, double two)
         {
             return one * two * three;
+        }
+
+        public double Genji(double one , double two)
+        {
+            return one * two;
         }
     }
 }

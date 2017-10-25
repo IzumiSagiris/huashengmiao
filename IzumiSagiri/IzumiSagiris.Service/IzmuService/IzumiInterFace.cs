@@ -9,5 +9,7 @@ namespace IzumiSagiris.Service.IzmuService
     public interface IzumiInterFace
     {
         double Shimada(double one, double two);
+
+        double Genji(double one, double two);
     }
 }
