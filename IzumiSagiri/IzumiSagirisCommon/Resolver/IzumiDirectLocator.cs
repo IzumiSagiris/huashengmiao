@@ -85,5 +85,41 @@ namespace IzumiSagirisCommon.Resolver
             }
             return values;
         }
+
+        public static Action<T, object> SetValueAction<T>(string propertyName)
+        {
+            var type = typeof(T);
+            var dynamicMethod = new DynamicMethod("EmitCallable", null, new[] { type, typeof(object) }, type.Module);
+            ILGenerator iLGenerator = dynamicMethod.GetILGenerator();
+
+
+            var callMethod = type.GetMethod("set_" + propertyName, BindingFlags.Instance | BindingFlags.IgnoreCase | BindingFlags.Public);
+            var parameterInfo = callMethod.GetParameters()[0];
+            var local = iLGenerator.DeclareLocal(parameterInfo.ParameterType, true);
+
+
+            iLGenerator.Emit(OpCodes.Ldarg_1);
+            if (parameterInfo.ParameterType.IsValueType)
+            {
+                iLGenerator.Emit(OpCodes.Unbox_Any, parameterInfo.ParameterType);
+            }
+            else
+            {
+                iLGenerator.Emit(OpCodes.Castclass, parameterInfo.ParameterType);
+            }
+
+
+            iLGenerator.Emit(OpCodes.Stloc, local);
+            iLGenerator.Emit(OpCodes.Ldarg_0);
+            iLGenerator.Emit(OpCodes.Ldloc, local);
+
+
+            iLGenerator.EmitCall(OpCodes.Callvirt, callMethod, null);
+            iLGenerator.Emit(OpCodes.Ret);
+
+
+            return dynamicMethod.CreateDelegate(typeof(Action<T, object>)) as Action<T, object>;
+        }
+
     }
 }
